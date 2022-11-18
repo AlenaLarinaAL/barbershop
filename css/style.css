@@ -29,6 +29,8 @@
   --dark-bg-cl: #191c26;
   --accent-bg-cl: #ff6c00;
   --team-sect-bg: #f7f7f7;
+
+  --anim-fast: 300ms ease-out;
 }
 body {
   font-family: "Open Sans", sans-serif;
@@ -147,7 +149,7 @@ p {
   z-index: 10;
   width: 100%;
 }
-.header.no-transparency{
+.header.no-transparency {
   background-color: rgba(7, 9, 15, 0.7);
   backdrop-filter: blur(2px);
 }
@@ -161,8 +163,8 @@ p {
 .header-logo {
   fill: #303030;
 }
-.header.no-transparency .header-logo{
-  fill:var(--light-txt-cl);
+.header.no-transparency .header-logo {
+  fill: var(--light-txt-cl);
 }
 .header-nav {
   margin-right: auto;
@@ -212,8 +214,7 @@ p {
 .hero-container {
   display: flex;
 }
-.hero-left-side{
- 
+.hero-left-side {
   width: 100px;
   display: flex;
   align-items: flex-end;
@@ -228,7 +229,22 @@ p {
   background-image: url(../images/hero-bg-img.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position:  center;
+  background-position: center;
+}
+.hero-list {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.hero-list::before {
+  content: "";
+  width: 60px;
+  height: 1px;
+  background-color: var(--main-txt-cl);
+}
+.hero-media-list {
+  transform: rotate(-90deg) translateY(40px);
+  transform-origin: left;
 }
 .hero-link {
   font-weight: 600;
@@ -249,7 +265,8 @@ p {
   color: var(--light-txt-cl);
 }
 .hero-undertitle {
-  color: var(--services-txt-cl);
+  color: #fff;
+  /* color: var(--services-txt-cl); */
   width: 378px;
 }
 /*  About section  */
@@ -329,7 +346,34 @@ p {
   margin: 0 auto;
 }
 /* Benefits section  */
-
+.benefits-container {
+  display: flex;
+  gap: 30px;
+}
+.benefits-left-side {
+  width: 50%;
+}
+.benefits-right-side {
+  width: 500px;
+}
+.benefits-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  width: 370px;
+  margin: 0 auto;
+}
+.benefits-item {
+  width: 170px;
+  min-height: 133px;
+  padding: 20px 24px;
+  text-align: center;
+  background-color: var(--team-sect-bg);
+}
+.benefits-item:nth-child(2n) {
+  margin-left: 30px;
+  margin-top: 30px;
+}
 .benefits-quantity {
   font-weight: 700;
   font-size: 42px;
@@ -412,6 +456,7 @@ p {
 .gallery-item:not(:last-child) {
   margin-right: 30px;
 }
+
 /* Booking & Contatcs sections */
 .contacts-group {
   background-color: var(--dark-bg-cl);
@@ -429,6 +474,82 @@ p {
 .contacts {
   width: 570px;
 }
+.booking-group {
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin-bottom: 44px;
+}
+.booking-group-field {
+  position: relative;
+  flex-basis: 270px;
+}
+.booking-group-field:not(:last-child) {
+  margin-right: 30px;
+}
+.booking-field, .booking-message {
+  width: 100%;
+  height: 24px;
+  color: var(--light-txt-cl);
+  border: none;
+  /* outline: outset; */
+  background-color: transparent;
+
+  border-bottom: 1px solid rgba(157, 164, 189, 0.4);
+
+  transition: border-color var(--anim-fast);
+}
+.booking-message{
+  height: 76px;
+  resize: none;
+}
+.booking-field:focus,
+.booking-field:not(:placeholder-shown),
+.booking-message:focus,
+.booking-message:not(:placeholder-shown) {
+  border-color: #ffffff;
+}
+
+.booking-field::placeholder,
+.booking-message::placeholder {
+  opacity: 0;
+  font-size: 14px;
+  color: #9da4bd;
+  transition: opacity var(--anim-fast);
+}
+
+.booking-field:focus::placeholder,
+.booking-message:focus::placeholder {
+  opacity: 1;
+  transition-delay: 200ms;
+}
+.booking-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 15px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transform-origin: left;
+
+  color: rgba(157, 164, 189, 0.4);
+}
+.booking-field:focus + .booking-label,
+.booking-field:not(:placeholder-shown) + .booking-label,
+.booking-message:focus + .booking-label,
+.booking-message:not(:placeholder-shown) + .booking-label {
+  transform: translateY(-100%) scale(0.8);
+  color: #ffffff;
+}
+
+.booking-field + .booking-label::after {
+  content: '*';
+  color: #ff6c00;
+}
+
 .contacts {
   padding-left: 100px;
 }
@@ -443,7 +564,9 @@ p {
 .contacts-map-link {
   font-weight: 700;
 }
-
+.contacts-uppertitle{
+  color: var(--light-txt-cl);
+}
 .contacts-item:not(:last-child) {
   margin-bottom: 20px;
 }
@@ -477,7 +600,7 @@ p {
   align-self: baseline;
   margin-top: 6px;
 }
-/* footer  */
+
 .footer-copyright {
   font-weight: 600;
   font-size: 11px;

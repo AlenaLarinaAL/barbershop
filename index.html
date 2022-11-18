@@ -72,7 +72,7 @@
       <section class="hero">
         <div class="container hero-container">
           <div class="hero-left-side">
-            <ul class="hero-list list">
+            <ul class="hero-list hero-media-list list">
               <li class="hero-list-item">
                 <a
                   class="hero-link link"
@@ -201,27 +201,29 @@
       </section>
       <!-- Benefits section -->
       <section class="section benefits">
-        <div class="container">
-          <ul class="benefits-list list">
-            <li class="benefits-item">
-              <span class="benefits-quantity">600</span>
-              <p class="benefits-text">Satisfied customers per day</p>
-            </li>
-            <li class="benefits-item">
-              <span class="benefits-quantity">50</span>
-              <p class="benefits-text">Awards for excellent service</p>
-            </li>
+        <div class="container benefits-container">
+          <div class="benefits-left-side">
+            <ul class="benefits-list list">
+              <li class="benefits-item">
+                <span class="benefits-quantity">600</span>
+                <p class="benefits-text">Satisfied customers per day</p>
+              </li>
+              <li class="benefits-item">
+                <span class="benefits-quantity">50</span>
+                <p class="benefits-text">Awards for excellent service</p>
+              </li>
 
-            <li class="benefits-item">
-              <span class="benefits-quantity">20</span>
-              <p class="benefits-text">Kyiv’s best barbers</p>
-            </li>
-            <li class="benefits-item">
-              <span class="benefits-quantity">100</span>
-              <p class="benefits-text">Gifts for regular customers</p>
-            </li>
-          </ul>
-          <div>
+              <li class="benefits-item">
+                <span class="benefits-quantity">20</span>
+                <p class="benefits-text">Kyiv’s best barbers</p>
+              </li>
+              <li class="benefits-item">
+                <span class="benefits-quantity">100</span>
+                <p class="benefits-text">Gifts for regular customers</p>
+              </li>
+            </ul>
+          </div>
+          <div class="benefits-right-side">
             <p class="uppertitle">Old traditional school</p>
             <h2 class="title">¿Why people come to us?</h2>
             <p class="undertitle">
@@ -510,6 +512,41 @@
         <div class="container contacts-container">
           <section class="booking section">
             <h2 class="title title-theme-light">Online booking</h2>
+            <form class="booking-form" name="booking_form">
+              <div class="booking-group">
+                <label class="booking-group-field">
+                  <input
+                    class="booking-field"
+                    type="text"
+                    name="username"
+                    placeholder="John Dou"
+                    required
+                    minlength="2"
+                  />
+                  <span class="booking-label">Name</span>
+                </label>
+                <label class="booking-group-field">
+                  <input
+                    class="booking-field"
+                    type="tel"
+                    name="user_phone"
+                    placeholder="+38 (099) 123-45-67"
+                    required
+                  />
+                  <span class="booking-label">Phone</span>
+                </label>
+              </div>
+              <label class="booking-group">
+                <textarea
+                class="booking-message"
+                  name="Message"
+                  rows="5"
+                  placeholder="Type your message"
+                ></textarea>
+                <span class="booking-label">Message</span>
+              </label>
+              <button class="btn btn-text-white" type="button">Send</button>
+            </form>
           </section>
           <section class="contacts section">
             <h2 class="title title-theme-light">Contacts</h2>
@@ -552,7 +589,7 @@
                 </li>
               </ul>
             </address>
-            <p class="uppertitle">Working hours</p>
+            <p class="uppertitle contacts-uppertitle uppertitle-theme-gray">Working hours</p>
             <p class="contacts-shedule">Every day from 9:00 to 22:00</p>
           </section>
         </div>
