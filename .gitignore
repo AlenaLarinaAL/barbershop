@@ -1,5 +1,6 @@
 # MacOS folder files
 .DS_Store
+.vscode
 
 #Exclude icons folder
 icons
